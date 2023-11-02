@@ -1,7 +1,7 @@
 export type SiteConfig = typeof siteConfig
 
 export const siteConfig = {
-  name: "gerenyitamas.dev",
+  name: "tamasgerenyi.dev",
   description:
     "I'm a front-end developer, specialized in development of web applications using React.js, Next.js and more",
   mainNav: [
@@ -10,16 +10,12 @@ export const siteConfig = {
       href: "/",
     },
     {
-      title: "About",
-      href: "#about",
-    },
-    {
       title: "Work",
-      href: "#work",
+      href: "/work",
     },
     {
-      title: "Experience",
-      href: "#experience",
+      title: "Blog",
+      href: "/blog",
     },
     {
       title: "Contact",
