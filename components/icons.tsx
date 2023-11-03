@@ -1,4 +1,5 @@
 import {
+  ChevronLeft,
   Linkedin,
   LucideIcon,
   LucideProps,
@@ -10,6 +11,7 @@ import {
 export type Icon = LucideIcon
 
 export const Icons = {
+  chevronLeft: ChevronLeft,
   sun: SunMedium,
   moon: Moon,
   twitter: Twitter,

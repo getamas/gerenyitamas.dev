@@ -4,6 +4,8 @@ export const siteConfig = {
   name: "tamasgerenyi.dev",
   description:
     "I'm a front-end developer, specialized in development of web applications using React.js, Next.js and more",
+  url: "https://tamasgerenyi.vercel.app",
+  ogImage: "https://tamasgerenyi.vercel.app/og.jpg",
   mainNav: [
     {
       title: "Home",
