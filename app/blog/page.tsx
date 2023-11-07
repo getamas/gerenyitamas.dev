@@ -1,9 +1,7 @@
-import Image from "next/image"
-import Link from "next/link"
 import { allPosts } from "contentlayer/generated"
 import { compareDesc } from "date-fns"
 
-import { formatDate } from "@/lib/utils"
+import { Post } from "@/components/blog/post"
 
 export const metadata = {
   title: "Blog",
@@ -17,48 +15,16 @@ export default async function BlogPage() {
     })
 
   return (
-    <div className="container max-w-4xl py-6 lg:py-10">
-      <div className="flex flex-col items-start gap-4 md:flex-row md:justify-between md:gap-8">
-        <div className="flex-1 space-y-4">
-          <h1 className="inline-block font-heading text-4xl tracking-tight lg:text-5xl">
-            Blog
-          </h1>
-          <p className="text-xl text-muted-foreground">
-            A blog built using Contentlayer. Posts are written in MDX.
-          </p>
-        </div>
+    <div className="py-6 lg:py-10">
+      <div className="mx-auto w-full max-w-screen-lg px-5 pb-3 pt-5 sm:pb-5 sm:pt-8">
+        <h1 className="text-lg font-semibold">
+          Articles <span className="font-normal">by Tamás Gerényi</span>
+        </h1>
       </div>
-      <hr className="my-8" />
       {posts?.length ? (
-        <div className="grid gap-10 sm:grid-cols-2">
-          {posts.map((post, index) => (
-            <article
-              key={post._id}
-              className="group relative flex flex-col space-y-2"
-            >
-              {post.image && (
-                <Image
-                  src={post.image}
-                  alt={post.title}
-                  width={804}
-                  height={452}
-                  className="rounded-md border bg-muted transition-colors"
-                  priority={index <= 1}
-                />
-              )}
-              <h2 className="text-2xl font-extrabold">{post.title}</h2>
-              {post.description && (
-                <p className="text-muted-foreground">{post.description}</p>
-              )}
-              {post.date && (
-                <p className="text-sm text-muted-foreground">
-                  {formatDate(post.date)}
-                </p>
-              )}
-              <Link href={post.slug} className="absolute inset-0">
-                <span className="sr-only">View Article</span>
-              </Link>
-            </article>
+        <div className="mx-auto grid w-full max-w-screen-lg grid-cols-1 flex-col gap-5 px-5 pb-24 sm:grid-cols-2 lg:gap-10">
+          {posts.map((post) => (
+            <Post post={post} key={post._id} />
           ))}
         </div>
       ) : (

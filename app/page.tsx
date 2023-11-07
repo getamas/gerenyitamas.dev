@@ -1,6 +1,5 @@
 import Image from "next/image"
 import Link from "next/link"
-import profileImage from "@/images/profile.jpg"
 
 import { siteConfig } from "@/config/site"
 import { buttonVariants } from "@/components/ui/button"
@@ -11,8 +10,11 @@ export default function IndexPage() {
       <section className="space-y-6 pb-8 pt-6 md:pb-12 md:pt-10 lg:py-32">
         <div className="container flex max-w-[64rem] flex-col items-center gap-4 text-center">
           <Image
-            src={profileImage}
+            src="/images/avatars/getamas.jpg"
             className="rounded-full object-cover w-52 h-52"
+            width={200}
+            height={200}
+            priority
             alt="Gerényi Tamás"
           />
           <h1 className="font-heading font-bold text-2xl sm:text-5xl md:text-6xl lg:text-7xl">
