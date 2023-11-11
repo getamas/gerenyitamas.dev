@@ -57,11 +57,11 @@ export default function IndexPage() {
         </div>
       </section>
       <section id="about">
-        <div className="mx-auto flex w-full max-w-4xl flex-col items-center justify-center gap-10 px-5 py-32 sm:gap-16 md:flex-row">
+        <div className="mx-auto flex w-full max-w-4xl flex-col items-center justify-center gap-10 px-5 py-16 sm:py-32 sm:gap-16 md:flex-row">
           <div className="flex flex-shrink-0 items-center justify-center overflow-hidden rounded-full bg-gray-200 dark:bg-gray-800">
             <Image
               src="/images/avatars/getamas.jpg"
-              className="rounded-full object-cover w-52 h-52"
+              className="rounded-full object-cover w-40 h-40 sm:w-52 sm:h-52"
               width={200}
               height={200}
               priority
