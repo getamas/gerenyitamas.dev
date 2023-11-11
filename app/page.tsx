@@ -1,9 +1,12 @@
 import Image from "next/image"
 import Link from "next/link"
+import { allPosts } from "contentlayer/generated"
+import { compareDesc } from "date-fns"
 
 import { projects, skills, testimonials, workExperiences } from "@/config/data"
 import { siteConfig } from "@/config/site"
 import { buttonVariants } from "@/components/ui/button"
+import { Post } from "@/components/blog/post"
 import { ProjectList } from "@/components/project-list"
 import { SectionTitle } from "@/components/section-title"
 import { SkillCards } from "@/components/skill-card"
@@ -11,6 +14,13 @@ import { TestimonialCards } from "@/components/testimonial-cards"
 import { WorkExperienceList } from "@/components/work-experience-list"
 
 export default function IndexPage() {
+  const posts = allPosts
+    .filter((post) => post.published)
+    .sort((a, b) => {
+      return compareDesc(new Date(a.date), new Date(b.date))
+    })
+    .slice(0, 3)
+
   return (
     <>
       <section
@@ -94,6 +104,18 @@ export default function IndexPage() {
         <div className="container space-y-6 md:max-w-4xl bg-slate-50 py-8 dark:bg-transparent md:py-12 lg:py-24">
           <SectionTitle title="What Other People are Saying" />
           <TestimonialCards testimonials={testimonials} />
+        </div>
+      </section>
+      <section id="articles">
+        <div className="container space-y-6 bg-slate-50 py-8 dark:bg-transparent md:py-12 lg:py-24">
+          <SectionTitle title="Selected Articles" />
+          {posts?.length && (
+            <div className="mx-auto grid w-full grid-cols-1 flex-col gap-5 px-5 pb-24 pt-10 sm:grid-cols-3 lg:gap-10">
+              {posts.map((post) => (
+                <Post post={post} key={post._id} />
+              ))}
+            </div>
+          )}
         </div>
       </section>
     </>

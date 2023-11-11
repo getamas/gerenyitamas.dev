@@ -24,7 +24,7 @@ export const ProjectList = ({ projects }: { projects: Project[] }) => {
 
 export const ProjectItem = ({ project }: { project: Project }) => {
   return (
-    <div className="flex flex-col-reverse items-center justify-between gap-8 pb-16 pt-14 lg:flex-row lg:items-center">
+    <div className="flex flex-col-reverse items-center justify-between gap-16 pb-16 pt-14 lg:flex-row lg:items-center">
       <IPhoneFrame url={project.image} title={project.title} />
       <div className="flex flex-col items-center sm:items-start">
         <div className="mb-2 inline-flex rounded-full bg-amber-600 px-2 py-0.5 font-mono text-sm font-semibold uppercase text-background dark:bg-yellow-300">
