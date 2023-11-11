@@ -8,7 +8,7 @@ export const WorkExperienceList = ({
   experiences: WorkExperience[]
 }) => {
   return (
-    <ul className="mt-9 pt-14 mx-auto md:max-w-xl">
+    <ul className="mt-9 pt-8 sm:pt-14 mx-auto md:max-w-xl">
       {experiences.map((experience) => (
         <WorkExperienceItem key={experience.id} experience={experience} />
       ))}

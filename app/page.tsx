@@ -56,29 +56,28 @@ export default function IndexPage() {
           </div>
         </div>
       </section>
-      <section
-        id="about"
-        className="mx-auto flex w-full max-w-4xl flex-col items-center justify-center gap-10 px-5 py-32 sm:gap-16 md:flex-row"
-      >
-        <div className="flex flex-shrink-0 items-center justify-center overflow-hidden rounded-full bg-gray-200 dark:bg-gray-800">
-          <Image
-            src="/images/avatars/getamas.jpg"
-            className="rounded-full object-cover w-52 h-52"
-            width={200}
-            height={200}
-            priority
-            alt="Gerényi Tamás"
-          />
-        </div>
-        <div className="text-center md:text-left">
-          <p className="pb-3 text-2xl font-semibold">About me</p>
-          <p className="text-lg text-gray-800 text-opacity-80 dark:text-gray-300">
-            A passionate, highly motivated web developer, having extensive
-            knowledge in developing large-scale applications for the modern web.
-            My key skills include but not limited to sitebuilding responsive
-            website layouts, creating complex JavaScript solutions, single-page
-            applications and architecturing web-based systems.
-          </p>
+      <section id="about">
+        <div className="mx-auto flex w-full max-w-4xl flex-col items-center justify-center gap-10 px-5 py-32 sm:gap-16 md:flex-row">
+          <div className="flex flex-shrink-0 items-center justify-center overflow-hidden rounded-full bg-gray-200 dark:bg-gray-800">
+            <Image
+              src="/images/avatars/getamas.jpg"
+              className="rounded-full object-cover w-52 h-52"
+              width={200}
+              height={200}
+              priority
+              alt="Gerényi Tamás"
+            />
+          </div>
+          <div className="text-center md:text-left">
+            <p className="pb-3 text-2xl font-semibold">About me</p>
+            <p className="text-lg text-gray-800 text-opacity-80 dark:text-gray-300">
+              A passionate, highly motivated web developer, having extensive
+              knowledge in developing large-scale applications for the modern
+              web. My key skills include but not limited to sitebuilding
+              responsive website layouts, creating complex JavaScript solutions,
+              single-page applications and architecturing web-based systems.
+            </p>
+          </div>
         </div>
       </section>
       <section
@@ -110,7 +109,7 @@ export default function IndexPage() {
         <div className="container space-y-6 bg-slate-50 py-8 dark:bg-transparent md:py-12 lg:py-24">
           <SectionTitle title="Selected Articles" />
           {posts?.length && (
-            <div className="mx-auto grid w-full grid-cols-1 flex-col gap-5 px-5 pb-24 pt-10 sm:grid-cols-3 lg:gap-10">
+            <div className="mx-auto grid w-full grid-cols-1 flex-col gap-5 sm:px-5 pb-24 pt-10 sm:grid-cols-3 lg:gap-10">
               {posts.map((post) => (
                 <Post post={post} key={post._id} />
               ))}

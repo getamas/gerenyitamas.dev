@@ -8,10 +8,6 @@ export const siteConfig = {
   ogImage: "https://tamasgerenyi.vercel.app/og.jpg",
   mainNav: [
     {
-      title: "Home",
-      href: "/",
-    },
-    {
       title: "Work",
       href: "#work",
     },
