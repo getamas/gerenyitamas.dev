@@ -31,3 +31,12 @@ export interface Testimonial {
   }
   twitter?: string
 }
+
+export interface Project {
+  id?: number
+  title: string
+  image: string
+  technologies: string[]
+  description: string
+  url: string
+}

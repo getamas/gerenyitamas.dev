@@ -1,4 +1,4 @@
-import { Skill, Testimonial, WorkExperience } from "@/types/data"
+import { Project, Skill, Testimonial, WorkExperience } from "@/types/data"
 
 export const skills: Skill[] = [
   {
@@ -86,6 +86,18 @@ export const workExperiences: WorkExperience[] = [
       "JavaScript",
       "Webpack",
     ],
+  },
+]
+
+export const projects: Project[] = [
+  {
+    id: 1,
+    title: "SmilezorPlan",
+    image: "/images/projects/smilezorplan-light.png",
+    technologies: ["Next.js", "React", "MUI"],
+    description:
+      "There's a wide breadth and deep depth to explore in order to become an Epic Web Dev. In order to help you navigate, Kent has recorded conversations and some of today's leading developers. This isn't your average tech podcast! Each of these 25 discussions about technologies, concepts, and people skills will leave you inspired to apply what you've learned and everything from honing leadership skills to streamlining tests to optimizing databases.",
+    url: "https://smilezorplan.hu",
   },
 ]
 

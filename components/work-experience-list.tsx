@@ -10,7 +10,7 @@ export const WorkExperienceList = ({
   return (
     <ul className="mt-9 pt-14 mx-auto md:max-w-xl">
       {experiences.map((experience) => (
-        <WorkExperienceItem experience={experience} />
+        <WorkExperienceItem key={experience.id} experience={experience} />
       ))}
     </ul>
   )
@@ -43,8 +43,11 @@ export const WorkExperienceItem = ({
           {experience.startDate} - {experience.endDate}
         </p>
         <ul className="pt-8">
-          {experience.desciption.map((text) => (
-            <li className='py-1 pl-7 before:-ml-7 before:pr-3 before:text-emerald-500 before:content-["✓"] dark:before:text-emerald-300'>
+          {experience.desciption.map((text, index) => (
+            <li
+              key={index}
+              className='py-1 pl-7 before:-ml-7 before:pr-3 before:text-emerald-500 before:content-["✓"] dark:before:text-emerald-300'
+            >
               {text}
             </li>
           ))}

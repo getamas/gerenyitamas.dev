@@ -1,9 +1,10 @@
 import Image from "next/image"
 import Link from "next/link"
 
-import { skills, testimonials, workExperiences } from "@/config/data"
+import { projects, skills, testimonials, workExperiences } from "@/config/data"
 import { siteConfig } from "@/config/site"
 import { buttonVariants } from "@/components/ui/button"
+import { ProjectList } from "@/components/project-list"
 import { SectionTitle } from "@/components/section-title"
 import { SkillCards } from "@/components/skill-card"
 import { TestimonialCards } from "@/components/testimonial-cards"
@@ -86,6 +87,7 @@ export default function IndexPage() {
         <div className="container space-y-6 md:max-w-4xl bg-slate-50 py-8 dark:bg-transparent md:py-12 lg:py-24">
           <SectionTitle title="Work Experiences" />
           <WorkExperienceList experiences={workExperiences} />
+          <ProjectList projects={projects} />
         </div>
       </section>
       <section id="testimonials">
