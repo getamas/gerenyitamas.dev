@@ -7,10 +7,11 @@ import { projects, skills, testimonials, workExperiences } from "@/config/data"
 import { siteConfig } from "@/config/site"
 import { buttonVariants } from "@/components/ui/button"
 import { Post } from "@/components/blog/post"
+import { SkillCards, TestimonialCards } from "@/components/cards"
+import { ContactForm } from "@/components/contact-form"
+import { Icons } from "@/components/icons"
 import { ProjectList } from "@/components/project-list"
 import { SectionTitle } from "@/components/section-title"
-import { SkillCards } from "@/components/skill-card"
-import { TestimonialCards } from "@/components/testimonial-cards"
 import { WorkExperienceList } from "@/components/work-experience-list"
 
 export default function IndexPage() {
@@ -23,10 +24,7 @@ export default function IndexPage() {
 
   return (
     <>
-      <section
-        id="hero"
-        className="space-y-6 pb-8 pt-6 md:pb-12 md:pt-10 lg:py-32"
-      >
+      <section id="hero" className="space-y-6 pb-8 md:pb-12 pt-10 lg:py-32">
         <div className="container flex max-w-[64rem] flex-col items-center gap-4 text-center">
           <a
             className="rounded-2xl bg-muted px-4 py-1.5 text-sm font-medium"
@@ -42,13 +40,11 @@ export default function IndexPage() {
             {siteConfig.description}
           </p>
           <div className="space-x-4">
-            <Link href="#contact" className={buttonVariants()}>
+            <Link href="/#contact" className={buttonVariants()}>
               Get in touch
             </Link>
             <Link
-              target="_blank"
-              rel="noreferrer"
-              href={siteConfig.links.github}
+              href="/#about"
               className={buttonVariants({ variant: "outline" })}
             >
               Find out more
@@ -71,11 +67,13 @@ export default function IndexPage() {
           <div className="text-center md:text-left">
             <p className="pb-3 text-2xl font-semibold">About me</p>
             <p className="text-lg text-gray-800 text-opacity-80 dark:text-gray-300">
-              A passionate, highly motivated web developer, having extensive
-              knowledge in developing large-scale applications for the modern
-              web. My key skills include but not limited to sitebuilding
-              responsive website layouts, creating complex JavaScript solutions,
-              single-page applications and architecturing web-based systems.
+              Experienced Senior Frontend Developer adept in architecting
+              scalable web-based systems and crafting high-performance
+              single-page applications using React.js, Vue.js, and TypeScript.
+              Proven track record in core development and key contributions to
+              diverse projects. Eager to bring innovation and expertise to
+              dynamic teams, continuously seeking growth and new challenges in
+              the ever-evolving landscape of web development.
             </p>
           </div>
         </div>
@@ -86,13 +84,13 @@ export default function IndexPage() {
       >
         <SectionTitle
           title="Skills"
-          description="This project is an experiment to see how a modern app, with features
-            like auth, subscriptions, API routes, and static pages would work in
-            Next.js 13 app dir."
+          description=" My key skills include but not limited to sitebuilding
+               website layouts, creating complex JavaScript solutions,
+              single-page applications and architecturing web-based systems."
         />
         <SkillCards skills={skills} />
       </section>
-      <section id="experience">
+      <section id="work">
         <div className="container space-y-6 md:max-w-4xl bg-slate-50 py-8 dark:bg-transparent md:py-12 lg:py-24">
           <SectionTitle title="Work Experiences" />
           <WorkExperienceList experiences={workExperiences} />
@@ -109,12 +107,54 @@ export default function IndexPage() {
         <div className="container space-y-6 bg-slate-50 py-8 dark:bg-transparent md:py-12 lg:py-24">
           <SectionTitle title="Selected Articles" />
           {posts?.length && (
-            <div className="mx-auto grid w-full grid-cols-1 flex-col gap-5 sm:px-5 pb-24 pt-10 sm:grid-cols-3 lg:gap-10">
+            <div className="mx-auto grid w-full grid-cols-1 flex-col gap-5 sm:px-5 pt-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-10">
               {posts.map((post) => (
                 <Post post={post} key={post._id} />
               ))}
             </div>
           )}
+        </div>
+      </section>
+      <section id="contact">
+        <div className="container space-y-6 md:max-w-4xl bg-slate-50 py-8 dark:bg-transparent md:py-12 lg:py-24">
+          <SectionTitle
+            title="Contact Me"
+            description="I'm ready to hear about your project. Don't hesitate to get in touch with me using the contact form."
+          />
+          <div className="flex flex-col-reverse lg:flex-row justify-between gap-8 sm:gap-16 pb-16 pt-14">
+            <div className="flex-grow w-full lg:max-w-md">
+              <ContactForm />
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-3">Connect</h3>
+              <a
+                className="text-indigo-500 text-opacity-100 hover:underline dark:text-brand"
+                href={`mailto:${siteConfig.links.email}`}
+              >
+                getamas04@gmail.com
+              </a>
+              <ul className="flex gap-3 mt-3">
+                <li>
+                  <a
+                    href={siteConfig.links.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Icons.gitHub className="h-5 w-5" />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href={siteConfig.links.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Icons.linkedIn className="h-5 w-5" />
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
     </>
