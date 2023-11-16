@@ -153,8 +153,8 @@ export function ContactForm() {
                 </RadioGroup>
               </FormControl>
               <FormDescription>
-                Please specify the type level of completion you'd like me to
-                deliver on this project.
+                Please specify the type level of completion you&apos;d like me
+                to deliver on this project.
               </FormDescription>
               <FormMessage />
             </FormItem>
